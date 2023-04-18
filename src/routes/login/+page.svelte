@@ -1,3 +1,9 @@
-<script lang="ts">
-	//TODO: lucia
-</script>
+<script lang="ts"></script>
+
+<form>
+	<label for="email">Email</label>
+	<input type="email" name="email" id="email" />
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password" />
+	<button type="submit">Login</button>
+</form>

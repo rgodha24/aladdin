@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"postinstall": "svelte-kit sync && prisma generate",
+		"generate": "prisma generate",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -33,6 +34,7 @@
 	"dependencies": {
 		"@lucia-auth/adapter-prisma": "^1.0.0",
 		"@prisma/client": "^4.12.0",
-		"lucia-auth": "^1.0.0"
+		"lucia-auth": "^1.0.0",
+		"zod": "^3.21.4"
 	}
 }

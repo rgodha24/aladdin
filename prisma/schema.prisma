@@ -9,17 +9,17 @@ datasource db {
 }
 
 model Location {
-  id        Int    @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   name      String
   inventory Item[]
-
-  users AuthUser[]
+  users     AuthUser[]
 }
 
 model Item {
   id       Int    @id @default(autoincrement())
   name     String
   quantity Int
+  imgUrl   String
 
   Location   Location? @relation(fields: [locationId], references: [id])
   locationId Int?
@@ -29,6 +29,7 @@ model Item {
 
 model AuthUser {
   id                   String        @id @unique
+  username             String        @unique
   auth_session         AuthSession[]
   auth_key             AuthKey[]
   accessible_locations Location[]
