@@ -4,7 +4,7 @@ import { prisma } from '$lib/server/db';
 import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ request, locals }) => {
+export const load: PageServerLoad = async ({ locals }) => {
 	const { user } = await locals.auth.validateUser();
 	if (!user) throw redirect(307, '/login');
 	return {
