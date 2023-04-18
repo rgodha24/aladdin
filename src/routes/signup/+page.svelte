@@ -2,9 +2,9 @@
 	//TODO: lucia
 </script>
 
-<form>
-	<label for="email">Email</label>
-	<input type="email" name="email" id="email" />
+<form method="post">
+	<label for="username">username</label>
+	<input type="username" name="username" id="username" />
 	<label for="password">Password</label>
 	<input type="password" name="password" id="password" />
 	<label for="passwordConfirm">Confirm Password</label>
