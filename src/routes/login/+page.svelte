@@ -1,26 +1,22 @@
 <script lang="ts">
-	import type { ActionData } from './$types';
+	import type { PageData } from './$types';
+	import { superForm } from 'sveltekit-superforms/client';
+	import FormItem from '$lib/FormItem.svelte';
+	import Button from '$lib/Button.svelte';
 
-	export let form: ActionData;
+	export let data: PageData;
+
+	const { form, errors, constraints, enhance } = superForm(data.signInForm);
 </script>
 
 <form
 	on:submit={() => {
 		console.log('submitting');
 	}}
+	use:enhance
 	method="POST"
 >
-	<label for="username">username</label>
-	<input type="username" name="username" id="username" />
-	<label for="password">Password</label>
-	<input type="password" name="password" id="password" />
-	<button type="submit">Login</button>
+	<FormItem {form} {errors} {constraints} name="username" label="Email" />
+	<FormItem {form} {errors} {constraints} name="password" label="Password" type="password" />
+	<Button type="submit">Sign in</Button>
 </form>
-
-{#if form?.success === true}
-	<p>Success!</p>
-{:else if form?.success === false}
-	<p>Failed!</p>
-	{form.password?.[0]}
-	{form.username?.[0]}
-{/if}

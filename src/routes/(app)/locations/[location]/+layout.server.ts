@@ -38,7 +38,6 @@ export const load: LayoutServerLoad = async ({ params, locals }) => {
 		});
 
 	return {
-    location,
-    
+		location
 	};
 };

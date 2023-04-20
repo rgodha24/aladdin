@@ -1,14 +1,13 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import unocss from 'unocss/vite';
-import { presetWind } from 'unocss';
+import { presetWind, transformerDirectives } from 'unocss';
 
 export default defineConfig({
 	plugins: [
 		unocss({
-			presets: [presetWind()], 
-			mode: "svelte-scoped", 
-			
+			presets: [presetWind(), transformerDirectives()],
+			mode: 'svelte-scoped'
 		}),
 		sveltekit()
 	]
