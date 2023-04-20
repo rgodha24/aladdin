@@ -6,8 +6,13 @@ import { presetWind, transformerDirectives } from 'unocss';
 export default defineConfig({
 	plugins: [
 		unocss({
-			presets: [presetWind(), transformerDirectives()],
-			mode: 'svelte-scoped'
+			presets: [presetWind()],
+			mode: 'svelte-scoped',
+			transformers: [
+				transformerDirectives({
+					applyVariable: '@apply'
+				})
+			]
 		}),
 		sveltekit()
 	]

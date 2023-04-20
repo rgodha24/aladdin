@@ -15,11 +15,11 @@
 </script>
 
 <div class="flex flex-row gap-4 mb-4">
-	<label class="block mb-2 font-bold text-gray-700" for={name}>
+	<label class="block mb-2 font-bold text-gray-300 min-w-8%" for={name}>
 		{label}
 	</label>
 	<input
-		class="py-2 px-3 w-full leading-tight text-gray-700 rounded border appearance-none focus:outline-none focus:shadow-outline"
+		class="py-2 px-3 w-full max-w-70% leading-tight text-gray-700 rounded border appearance-none focus:outline-none focus:shadow-outline"
 		use:typeAction
 		{name}
 		id={name}

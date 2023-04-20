@@ -15,7 +15,8 @@ export const actions: Actions = {
 			const session = await auth.createSession(key.userId);
 			locals.auth.setSession(session);
 		} catch (e) {
-			return setError(form, ['username', 'password'], 'Invalid username or password');
+			setError(form, 'username', 'Invalid username or password');
+			return setError(form, 'password', 'Invalid username or password');
 		}
 
 		return {
