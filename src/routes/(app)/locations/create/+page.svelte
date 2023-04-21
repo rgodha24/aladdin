@@ -1,17 +1,14 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import type { ActionData } from './$types';
+	import { superForm } from 'sveltekit-superforms/client';
+	import type { PageData } from './$types';
+	import FormItem from '$lib/FormItem.svelte';
+	import Button from '$lib/Button.svelte';
 
-	export let form: ActionData;
+	export let data: PageData;
+	const { form, errors, constraints, enhance, submitting } = superForm(data.form);
 </script>
 
-<form use:enhance>
-	<input name="name" type="text" placeholder="location name" />
-	<button type="submit">create</button>
+<form use:enhance method="post">
+	<FormItem {form} {errors} {constraints} name="name" label="Location Name" />
+	<Button type="submit">create</Button>
 </form>
-
-{#if form?.success}
-	<p>successfully created location!</p>
-{:else if form?.success === false}
-	<p>failed to create location {form.name}</p>
-{/if}

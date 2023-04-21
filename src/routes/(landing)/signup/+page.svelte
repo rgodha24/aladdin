@@ -1,13 +1,24 @@
 <script lang="ts">
-	//TODO: lucia
+	import { superForm } from 'sveltekit-superforms/client';
+	import type { PageData } from './$types';
+	import FormItem from '$lib/FormItem.svelte';
+	import Button from '$lib/Button.svelte';
+
+	export let data: PageData;
+
+	const { form, errors, constraints, enhance, submitting } = superForm(data.form);
 </script>
 
-<form method="post">
-	<label for="username">username</label>
-	<input type="username" name="username" id="username" />
-	<label for="password">Password</label>
-	<input type="password" name="password" id="password" />
-	<label for="passwordConfirm">Confirm Password</label>
-	<input type="password" name="passwordConfirm" id="passwordConfirm" />
-	<button type="submit">Signup</button>
+<form method="post" use:enhance>
+	<FormItem {form} {errors} {constraints} name="username" label="Email" />
+	<FormItem {form} {errors} {constraints} name="password" label="Password" type="password" />
+	<FormItem
+		{form}
+		{errors}
+		{constraints}
+		name="passwordConfirm"
+		label="Confirm Password"
+		type="password"
+	/>
+	<Button type="submit" loading={$submitting}>Signup</Button>
 </form>

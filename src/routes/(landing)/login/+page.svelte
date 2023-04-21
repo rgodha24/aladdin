@@ -6,7 +6,7 @@
 
 	export let data: PageData;
 
-	const { form, errors, constraints, enhance } = superForm(data.signInForm);
+	const { form, errors, constraints, enhance, submitting } = superForm(data.signInForm);
 </script>
 
 <form
@@ -18,5 +18,5 @@
 >
 	<FormItem {form} {errors} {constraints} name="username" label="Email" />
 	<FormItem {form} {errors} {constraints} name="password" label="Password" type="password" />
-	<Button type="submit">Sign in</Button>
+	<Button type="submit" loading={$submitting}>Sign in</Button>
 </form>

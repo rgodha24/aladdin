@@ -7,7 +7,7 @@
 
 <div class="flex flex-row">
 	<Sidebar user={data.user} />
-	<div>
+	<div class="w-full">
 		<slot />
 	</div>
 </div>

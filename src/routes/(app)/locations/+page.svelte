@@ -1,10 +1,14 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	export let page: PageData;
+	import Location from '$lib/Location.svelte';
+
+	export let data: PageData;
 </script>
 
-{#each page.locations as location}
-	<div class="location">
-		<h2>{location.name}</h2>
-	</div>
-{/each}
+<div class="flex flex-row">
+	{#each data.locations as location (location.id)}
+		<Location {location} />
+	{/each}
+</div>
+
+<a href="/locations/create"> Create a new location </a>
