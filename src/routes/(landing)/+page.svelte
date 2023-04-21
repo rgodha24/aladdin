@@ -1,1 +1,1 @@
-<h1 class="text-5xl text-center">Smart Shelf</h1>
+<h1 class="text-5xl text-center">Aladdin POS</h1>
