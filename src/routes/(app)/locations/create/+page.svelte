@@ -10,5 +10,5 @@
 
 <form use:enhance method="post">
 	<FormItem {form} {errors} {constraints} name="name" label="Location Name" />
-	<Button type="submit">create</Button>
+	<Button type="submit" loading={$submitting}>create</Button>
 </form>

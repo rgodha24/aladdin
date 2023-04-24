@@ -4,6 +4,6 @@
 	export let location: Location;
 </script>
 
-<div class="w-40 h-40 bg-gray-900 rounded-md">
-	<h3 class="m-auto text-3xl text-slate-200">{location.name}</h3>
+<div class="w-40 h-40 rounded-xl bg-bluegray-700">
+	<h3 class="my-auto text-3xl text-center text-slate-200">{location.name}</h3>
 </div>
