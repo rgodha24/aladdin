@@ -15,4 +15,6 @@
 		</ul>
 	</nav>
 </div>
-<a href="/locations/create"> Create a new location </a>
+<div class="flex flex-row justify-center mt-8">
+	<a href="/locations/create" class="btn variant-filled-primary"> Create a new location </a>
+</div>
