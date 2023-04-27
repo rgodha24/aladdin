@@ -3,6 +3,7 @@ import { sveltekit } from 'lucia-auth/middleware';
 import adapter from '@lucia-auth/adapter-prisma';
 import { dev } from '$app/environment';
 import { prisma } from './db';
+import 'lucia-auth/polyfill/node';
 
 export const auth = lucia({
 	adapter: adapter(prisma),
