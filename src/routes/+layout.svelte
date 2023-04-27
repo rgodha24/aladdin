@@ -6,9 +6,9 @@
 </script>
 
 <slot />
-<svelte:head
-	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
->
+<svelte:head>
+	{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+</svelte:head>
 
 <style lang="postcss">
 </style>
