@@ -21,6 +21,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.58.0",
 		"@typescript-eslint/parser": "^5.58.0",
 		"autoprefixer": "^10.4.7",
+		"esbuild-plugin-polyfill-node": "^0.2.0",
 		"eslint": "^8.38.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte3": "^4.0.0",
@@ -41,10 +42,11 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@lucia-auth/adapter-prisma": "^1.0.0",
+		"@lucia-auth/adapter-prisma": "^2.0.0",
 		"@prisma/client": "^4.12.0",
 		"@sveltejs/adapter-vercel": "^2.4.3",
-		"lucia-auth": "^1.0.0",
+		"crypto-browserify": "^3.12.0",
+		"lucia-auth": "^1.4.0",
 		"svelte-icons": "^2.1.0"
 	}
 }
