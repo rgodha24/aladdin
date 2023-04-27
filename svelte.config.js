@@ -8,10 +8,7 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({
-			runtime: 'edge',
-			regions: ['cle1', 'iad1', 'pdx1', 'sfo1']
-		})
+		adapter: adapter()
 	}
 };
 
