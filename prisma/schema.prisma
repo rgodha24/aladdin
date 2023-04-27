@@ -16,15 +16,27 @@ model Location {
 }
 
 model Item {
-  id       Int    @id @default(autoincrement())
+  id       Int           @id @default(autoincrement())
   name     String
   quantity Int
   imgUrl   String
+  history  ItemHistory[]
 
   Location   Location? @relation(fields: [locationId], references: [id])
   locationId Int?
 
   @@index([locationId])
+}
+
+model ItemHistory {
+  id        Int      @id @default(autoincrement())
+  delta     Int
+  createdAt DateTime @default(now())
+
+  Item   Item? @relation(fields: [itemId], references: [id])
+  itemId Int?
+
+  @@index([itemId])
 }
 
 model AuthUser {

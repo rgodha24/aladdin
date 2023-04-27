@@ -1,11 +1,14 @@
 <script lang="ts">
-	import '@unocss/reset/tailwind.css';
+	import '../theme.postcss';
+	import '@skeletonlabs/skeleton/styles/all.css';
+	import '../app.postcss';
+	import { autoModeWatcher } from '@skeletonlabs/skeleton';
 </script>
 
-	<slot />
+<slot />
+<svelte:head
+	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
+>
 
-<style>
-	:global(body) {
-		@apply bg-slate-900 text-white text-xl;
-	}
+<style lang="postcss">
 </style>

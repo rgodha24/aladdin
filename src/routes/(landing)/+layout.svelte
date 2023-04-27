@@ -1,8 +1,15 @@
 <script lang="ts">
 	import Navbar from '$lib/Navbar.svelte';
+	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="mx-10">
-	<Navbar />
+<AppShell>
+	<Navbar slot="header" />
 	<slot />
-</div>
+</AppShell>
+
+<style>
+	:root {
+		--tw-space-y-reverse: 0;
+	}
+</style>

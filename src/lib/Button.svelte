@@ -6,10 +6,10 @@
 </script>
 
 <button
-	class="py-2 px-4 font-medium text-white rounded-md hover:opacity-90"
-	class:primary={variant === 'primary'}
-	class:secondary={variant === 'secondary'}
-	class:danger={variant === 'danger'}
+	class="btn"
+	class:variant-filled-primary={variant === 'primary'}
+	class:variant-filled-secondary={variant === 'secondary'}
+	class:variant-filled-error={variant === 'danger'}
 	class:loading
 	on:click={onClick}
 	{type}
@@ -17,16 +17,7 @@
 	<slot />
 </button>
 
-<style>
-	.primary {
-		background-color: #3490dc;
-	}
-	.secondary {
-		background-color: #6cb2eb;
-	}
-	.danger {
-		background-color: #e3342f;
-	}
+<style lang="postcss">
 	.loading {
 		overflow: hidden;
 		position: relative;

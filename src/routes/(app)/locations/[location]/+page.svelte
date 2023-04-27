@@ -6,6 +6,8 @@
 	$: inventory = data.location.inventory;
 </script>
 
-{#each inventory as item, _ (item.id)}
+
+
+{#each inventory as item (item.id)}
 	<InventoryItem {item} />
 {/each}
