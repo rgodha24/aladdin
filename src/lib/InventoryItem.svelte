@@ -5,7 +5,11 @@
 	export let item: Item;
 </script>
 
-<img src={item.imgUrl} alt={'An image of the item' + item.name} />
-<h3>{item.name}</h3>
-<button type="button" on:click={() => incrementItem(item.id)}>+</button>
-<button type="button" on:click={() => decrementItem(item.id)}>-</button>
+<div class="flex flex-col p-4 border-black border-3">
+	<img src={item.imgUrl} alt={'An image of the item' + item.name} />
+	<div class="flex flex-row gap-4 justify-center">
+		<button type="button" on:click={() => incrementItem(item.id)}>+</button>
+		<h3>{item.name}: {item.quantity}</h3>
+		<button type="button" on:click={() => decrementItem(item.id)}>-</button>
+	</div>
+</div>

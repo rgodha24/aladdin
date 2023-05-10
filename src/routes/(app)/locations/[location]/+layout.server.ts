@@ -1,6 +1,6 @@
-import { prisma } from '$lib/server/db';
 import { redirect } from '@sveltejs/kit';
 import type { LayoutServerLoad } from './$types';
+import { validateUserAccessToLocation } from './validateUserAccess';
 
 export const load: LayoutServerLoad = async ({ params, locals }) => {
 	// layout doesnt reload on all page changes, so we need to check if the user is still logged in on page server loads...
@@ -11,31 +11,7 @@ export const load: LayoutServerLoad = async ({ params, locals }) => {
 		throw redirect(307, '/locations');
 	}
 
-	const location = prisma.location
-		.findUnique({
-			where: {
-				id: Number(params.location)
-			},
-			include: {
-				users: {
-					where: {
-						id: user.id
-					}
-				},
-				inventory: true
-			}
-		})
-		.then((location) => {
-			if (location === null) {
-				// TODO: custom logic for no location found
-				throw redirect(307, '/locations');
-			}
-			// TODO: custom logic for no access to location
-			else if (location.users.length === 0) {
-				throw redirect(307, '/locations');
-			}
-			return location;
-		});
+	const location = validateUserAccessToLocation(params.location, user.id);
 
 	return {
 		location

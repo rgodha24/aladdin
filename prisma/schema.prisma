@@ -21,7 +21,9 @@ model Item {
   name     String
   quantity Int
   imgUrl   String
+  barcode  BigInt
   history  ItemHistory[]
+  tags     Tag[]
 
   Location   Location? @relation(fields: [locationId], references: [id])
   locationId Int?
@@ -29,9 +31,14 @@ model Item {
   @@index([locationId])
 }
 
+model Tag {
+  name  String @id @unique
+  items Item[]
+}
+
 model ItemHistory {
   id        Int      @id @default(autoincrement())
-  delta     Int
+  quantity  Int
   createdAt DateTime @default(now())
 
   Item   Item? @relation(fields: [itemId], references: [id])

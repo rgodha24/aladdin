@@ -2,11 +2,11 @@
 	import type { Writable } from 'svelte/store';
 
 	type T = $$Generic<string>;
-	export let form: Writable<Record<T, string>>;
+	export let form: Writable<Record<T, unknown>>;
 	export let errors: Writable<Partial<Record<T, string[] | undefined>>>;
 	export let constraints: Writable<Partial<Record<T, object>>>;
 	export let name: T;
-	export let type: 'text' | 'password' = 'text';
+	export let type: 'text' | 'password' | 'number' = 'text';
 	export let label: string;
 
 	function typeAction(node: HTMLInputElement) {
