@@ -2,7 +2,7 @@ import { fail, redirect } from '@sveltejs/kit';
 import { setError, superValidate } from 'sveltekit-superforms/server';
 import { newItemSchema } from './schemas';
 import type { PageServerLoad, Actions } from './$types';
-import { prisma } from '$lib/server/db';
+import { prisma } from '$lib/server/prisma';
 import { validateUserAccessToLocation } from './validateUserAccess';
 
 export const load: PageServerLoad = async ({ locals }) => {

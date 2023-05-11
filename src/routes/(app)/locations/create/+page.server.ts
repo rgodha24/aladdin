@@ -1,9 +1,10 @@
 import type { Actions } from './$types';
-import { prisma } from '$lib/server/db';
+import { prisma } from '$lib/server/prisma';
 import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { superValidate } from 'sveltekit-superforms/server';
 import { locationSchema } from '$lib/schemas/locationSchema';
+import { kys } from '$lib/server/kysely';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	const { user } = await locals.auth.validateUser();

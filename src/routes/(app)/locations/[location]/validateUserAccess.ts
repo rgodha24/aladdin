@@ -1,4 +1,4 @@
-import { prisma } from '$lib/server/db';
+import { prisma } from '$lib/server/prisma';
 import { redirect } from '@sveltejs/kit';
 
 export async function validateUserAccessToLocation(location: string, userId: string) {

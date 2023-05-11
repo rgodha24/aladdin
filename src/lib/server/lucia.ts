@@ -2,7 +2,7 @@ import lucia from 'lucia-auth';
 import { sveltekit } from 'lucia-auth/middleware';
 import adapter from '@lucia-auth/adapter-prisma';
 import { dev } from '$app/environment';
-import { prisma } from './db';
+import { prisma } from './prisma';
 
 export const auth = lucia({
 	adapter: adapter(prisma),
