@@ -1,5 +1,5 @@
 import type { SSTConfig } from 'sst';
-import { SvelteKitSite } from 'sst/constructs';
+import { Config, SvelteKitSite } from 'sst/constructs';
 
 export default {
 	config(_input) {
@@ -10,7 +10,11 @@ export default {
 	},
 	stacks(app) {
 		app.stack(function Site({ stack }) {
-			const site = new SvelteKitSite(stack, 'site');
+			const site = new SvelteKitSite(stack, 'site', {
+				environment: {
+					DATABASE_URL: Config.Secret.DATABASE_URL
+				}
+			});
 			stack.addOutputs({
 				url: site.url
 			});
