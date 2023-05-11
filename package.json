@@ -6,7 +6,7 @@
 		"postinstall": "svelte-kit sync && prisma generate",
 		"generate": "kysely-codegen && prisma generate",
 		"dev": "sst bind vite dev",
-		"build": "vite build && cp prisma/schema.prisma .svelte-kit/svelte-kit-sst/server/lambda-handler/schema.prisma",
+		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
