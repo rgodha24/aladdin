@@ -37,8 +37,6 @@ export const actions: Actions = {
 			}
 		});
 
-		return {
-			form
-		};
+		throw redirect(307, `/locations/${res.id}`);
 	}
 };

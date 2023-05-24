@@ -25,7 +25,7 @@ model Item {
   history  ItemHistory[]
   tags     Tag[]
 
-  Location   Location? @relation(fields: [locationId], references: [id])
+  Location   Location? @relation(fields: [locationId], references: [id], onDelete: Cascade)
   locationId Int?
 
   @@index([locationId])
