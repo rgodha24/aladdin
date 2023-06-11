@@ -12,4 +12,5 @@
 		<h3>{item.name}: {item.quantity}</h3>
 		<button type="button" on:click={() => decrementItem(item.id)}>-</button>
 	</div>
+	<p class="text-center">barcode: {item.barcode}</p>
 </div>

@@ -1,7 +1,11 @@
 import { prisma } from '$lib/server/prisma';
 import { redirect } from '@sveltejs/kit';
 
-export async function validateUserAccessToLocation(location: string, userId: string) {
+type Nullable<T> = T | undefined | null;
+export async function validateUserAccessToLocation(location: string, userId: Nullable<string>) {
+	if (!userId) {
+		throw redirect(307, '/login');
+	}
 	return await prisma.location
 		.findUnique({
 			where: {

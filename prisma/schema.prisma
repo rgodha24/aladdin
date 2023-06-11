@@ -18,10 +18,11 @@ model Location {
 
 model Item {
   id       Int           @id @default(autoincrement())
+  price    Float
   name     String
   quantity Int
   imgUrl   String
-  barcode  BigInt
+  barcode  Int
   history  ItemHistory[]
   tags     Tag[]
 

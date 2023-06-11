@@ -57,7 +57,7 @@ export const actions: Actions = {
 				}
 			});
 		} catch {
-			setError(form, null, 'an error occured');
+			setError(form, '', 'an error occured');
 
 			return fail(400, { newItem: form });
 		}

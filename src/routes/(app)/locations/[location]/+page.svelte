@@ -46,6 +46,14 @@
 		type="number"
 		label="the number from the items barcode"
 	/>
+	<FormItem
+		form={newItemForm}
+		errors={newItem.errors}
+		constraints={newItem.constraints}
+		name="price"
+		type="number"
+		label="the price of the item"
+	/>
 	<InputChip bind:value={$newItemForm.tags} name="tags" />
 	<Button loading={$submitting} type="submit" variant="primary">Submit</Button>
 </form>

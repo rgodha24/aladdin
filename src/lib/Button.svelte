@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let variant: 'primary' | 'secondary' | 'danger' = 'primary';
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	export let onClick: () => void = () => {};
 	export let type: 'button' | 'submit' = 'button';
 	export let loading = false;
