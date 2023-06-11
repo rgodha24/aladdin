@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navbar from '$lib/Navbar.svelte';
-	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+	import { AppShell } from '@skeletonlabs/skeleton';
 </script>
 
 <AppShell>

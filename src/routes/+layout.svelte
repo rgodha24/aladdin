@@ -2,6 +2,7 @@
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	import { autoModeWatcher } from '@skeletonlabs/skeleton';
 </script>
 

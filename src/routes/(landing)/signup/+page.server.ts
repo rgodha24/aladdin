@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import type { Actions, PageServerLoad } from './$types';
 import { auth } from '$lib/server/lucia';
 import { fail, redirect } from '@sveltejs/kit';
