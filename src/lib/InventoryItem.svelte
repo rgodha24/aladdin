@@ -13,4 +13,5 @@
 		<button type="button" on:click={() => decrementItem(item.id)}>-</button>
 	</div>
 	<p class="text-center">barcode: {item.barcode}</p>
+	<p class="text-center">price: {item.price}</p>
 </div>
