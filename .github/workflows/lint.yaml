@@ -28,8 +28,11 @@ jobs:
           node-version: 16
           cache: 'pnpm'
 
+      - name: env stuff
+        run: echo "DATABASE_URL=''" >> .env
+
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Test
+      - name: Lint
         run: pnpm check && pnpm lint
